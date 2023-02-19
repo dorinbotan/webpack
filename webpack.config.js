@@ -11,6 +11,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(jpe?g|png|svg|giv)$/i,
+                type: 'asset',
+                // type: 'asset/inline',
+                // type: 'asset/resource',
+            },
+            {
                 test: /\.s[ac]{1}ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -27,6 +33,9 @@ module.exports = {
                 }
             },
         ]
+    },
+    output: {
+        assetModuleFilename: 'images/[hash][ext][query]',
     },
     plugins: [
         new MiniCssExtractPlugin(),

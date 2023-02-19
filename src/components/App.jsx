@@ -1,5 +1,4 @@
 import '../styles/index.scss'
-
 import Recipes from './Recipes';
 
 const App = () => {
