@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let mode = 'development';
@@ -36,8 +37,12 @@ module.exports = {
     },
     output: {
         assetModuleFilename: 'images/[hash][ext][query]',
+        clean: true,
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+        }),
         new MiniCssExtractPlugin(),
     ],
     resolve: {
